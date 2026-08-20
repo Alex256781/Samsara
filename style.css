@@ -1,0 +1,307 @@
+/* --- VARIABLES GLOBALES --- */
+:root {
+    --bg-principal: #f4f7f6;
+    --color-texto: #2d3748;
+    --azul-cerebro: #3182ce;
+    --azul-oscuro: #1a365d;
+    --verde-exito: #38a169;
+    --morado-habito: #805ad5;
+    --naranja-vitalidad: #dd6b20;
+    --rojo-fuerza: #e53e3e;
+    --blanco: #ffffff;
+    --sombra: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* --- REINICIO BÁSICO --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-principal);
+    color: var(--color-texto);
+}
+
+/* --- ENCABEZADO --- */
+.encabezado {
+    background: linear-gradient(135deg, var(--azul-oscuro) 0%, #2b6cb0 100%);
+    color: var(--blanco);
+    padding: 4rem 2rem;
+    text-align: center;
+    border-bottom: 5px solid var(--verde-exito);
+}
+
+.encabezado__titulo {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+.encabezado__descripcion {
+    font-size: 1.2rem;
+    max-width: 750px;
+    margin: 0 auto;
+    opacity: 0.95;
+}
+
+/* --- CONTENEDOR Y SECCIONES --- */
+.contenedor-principal {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem 1rem;
+}
+
+.seccion-bloque {
+    margin-bottom: 4rem;
+}
+
+.seccion-bloque__titulo {
+    font-size: 2rem;
+    color: var(--azul-oscuro);
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.seccion-bloque__titulo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--verde-exito);
+    border-radius: 2px;
+}
+
+.seccion-bloque__introduccion {
+    margin-bottom: 1.5rem;
+}
+
+/* REJILLA GENERAL */
+.rejilla-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+/* --- TARJETA CEREBRO --- */
+.tarjeta-cerebro {
+    background: var(--blanco);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+    border-top: 4px solid var(--azul-cerebro);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s;
+}
+
+.tarjeta-cerebro:hover {
+    transform: translateY(-5px);
+}
+
+.tarjeta-cerebro__ilustracion {
+    width: 100%;
+    height: 120px;
+    background-color: #f7fafc;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.tarjeta-cerebro__ilustracion svg {
+    max-height: 80px;
+}
+
+.tarjeta-cerebro__etiqueta {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 0.25rem 0.6rem;
+    border-radius: 12px;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+.tarjeta-cerebro__etiqueta--azul { background: #ebf8ff; color: var(--azul-cerebro); }
+.tarjeta-cerebro__etiqueta--verde { background: #e6fffa; color: #234e52; }
+.tarjeta-cerebro__etiqueta--morada { background: #faf5ff; color: var(--morado-habito); }
+.tarjeta-cerebro__etiqueta--roja { background: #fff5f5; color: #9b2c2c; }
+
+.tarjeta-cerebro__titulo {
+    color: var(--azul-cerebro);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.tarjeta-cerebro__texto {
+    font-size: 0.95rem;
+}
+
+.tarjeta-cerebro__ejemplo {
+    background: #f7fafc;
+    border-left: 3px solid var(--azul-cerebro);
+    padding: 0.75rem;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: #4a5568;
+}
+
+/* --- TARJETA MÉTODO --- */
+.lista-metodos {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.tarjeta-metodo {
+    background: var(--blanco);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    border-left: 5px solid var(--verde-exito);
+    align-items: center;
+}
+
+.tarjeta-metodo__ilustracion {
+    flex: 0 0 100px;
+    height: 100px;
+    background-color: #f7fafc;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tarjeta-metodo__ilustracion svg {
+    max-height: 70px;
+}
+
+.tarjeta-metodo__informacion {
+    flex: 2;
+    min-width: 250px;
+}
+
+.tarjeta-metodo__etiqueta {
+    display: inline-block;
+    background: #e6fffa;
+    color: #234e52;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.tarjeta-metodo__titulo {
+    color: var(--azul-oscuro);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.tarjeta-metodo__ciencia {
+    flex: 1;
+    min-width: 220px;
+    background-color: #f7fafc;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px dashed #cbd5e0;
+}
+
+.tarjeta-metodo__subtitulo-ciencia {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #4a5568;
+}
+
+.tarjeta-metodo__texto-ciencia {
+    font-size: 0.85rem;
+    color: #718096;
+    font-style: italic;
+}
+
+/* --- TARJETA HÁBITO --- */
+.tarjeta-habito {
+    background: var(--blanco);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+    border-left: 4px solid var(--morado-habito);
+}
+
+.tarjeta-habito__titulo {
+    color: var(--morado-habito);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.tarjeta-habito__texto {
+    font-size: 0.9rem;
+}
+
+/* --- TARJETA EXTRA --- */
+.tarjeta-extra {
+    background: var(--blanco);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+    border-top: 4px solid var(--azul-oscuro);
+}
+
+.tarjeta-extra--azul { border-top-color: var(--azul-cerebro); }
+.tarjeta-extra--rojo { border-top-color: var(--rojo-fuerza); }
+.tarjeta-extra--verde { border-top-color: var(--verde-exito); }
+.tarjeta-extra--morado { border-top-color: var(--morado-habito); }
+.tarjeta-extra--naranja { border-top-color: var(--naranja-vitalidad); }
+
+.tarjeta-extra__titulo {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+}
+
+.tarjeta-extra__titulo--azul { color: var(--azul-cerebro); }
+.tarjeta-extra__titulo--rojo { color: var(--rojo-fuerza); }
+.tarjeta-extra__titulo--verde { color: var(--verde-exito); }
+.tarjeta-extra__titulo--morado { color: var(--morado-habito); }
+.tarjeta-extra__titulo--naranja { color: var(--naranja-vitalidad); }
+
+.tarjeta-extra__lista {
+    list-style-type: none;
+}
+
+.tarjeta-extra__item {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+/* --- PIE DE PÁGINA --- */
+.pie-pagina {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+}
+
+.pie-pagina__texto {
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .tarjeta-metodo {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
